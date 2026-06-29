@@ -9,8 +9,8 @@
   --paper-2:    #efece4;   /* slightly deeper panel             */
   --ink:        #18272a;   /* near-black text                   */
   --ink-soft:   #45575a;   /* secondary text                    */
-  --teal:       #0f6e6e;   /* primary accent                    */
-  --teal-deep:  #0a4f4f;   /* dark sections / hovers            */
+  --teal:       #8a3a3a;   /* primary accent (oxblood)          */
+  --teal-deep:  #6e2b2b;   /* dark sections / hovers            */
   --brass:      #b07a3c;   /* warm secondary accent, sparse     */
   --brass-text: #8a5a20;   /* darker brass for small text (AA)  */
   --line:       #d8d3c8;   /* hairlines on paper                */

@@ -3,68 +3,143 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>adarkenigma LLC</title>
-  <style>
-    :root {
-      --ink: #1f2933;
-      --muted: #5b6770;
-      --accent: #0f6e6e;
-      --line: #d9e0e2;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { height: 100%; }
-    body {
-      font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: var(--ink);
-      background: #fbfcfc;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-    }
-    main {
-      max-width: 540px;
-      text-align: center;
-    }
-    .eyebrow {
-      font-size: 13px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 14px;
-    }
-    h1 {
-      font-size: clamp(30px, 6vw, 46px);
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      margin-bottom: 12px;
-    }
-    .rule {
-      width: 48px;
-      height: 2px;
-      background: var(--accent);
-      margin: 18px auto;
-      border: 0;
-    }
-    p {
-      font-size: 17px;
-      line-height: 1.6;
-      color: var(--muted);
-    }
-    footer {
-      margin-top: 28px;
-      font-size: 13px;
-      color: var(--muted);
-    }
-  </style>
+  <title>adarkenigma LLC — Human-first hospitality consulting</title>
+  <meta name="description" content="adarkenigma LLC trains the front-desk, housekeeping, and night-audit teams independent hotels run on. People-first consulting, no software to buy.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main>
-    <p class="eyebrow">Hospitality Consultancy</p>
-    <h1>adarkenigma LLC</h1>
-    <hr class="rule">
-    <p>A human-first partner for independent hotels. Training for housekeeping, front desk, and night audit, plus back-office support that helps small properties run well and earn more.</p>
-    <footer>Full site coming soon.</footer>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html">adarkenigma<span class="brand__mark" aria-hidden="true">.</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+        <span class="visually-hidden">Menu</span>
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a class="btn btn--solid nav__cta" href="contact.html">Talk to us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- 1. HERO -->
+    <section class="hero" aria-labelledby="hero-h">
+      <div class="container hero__grid">
+        <div>
+          <p class="eyebrow">Hospitality consultancy</p>
+          <h1 id="hero-h">Invest in people,<br>not software.</h1>
+          <p class="lead">We train the front-desk, housekeeping, and night-audit teams that independent hotels run on, so guests come back and your numbers climb. No platforms to buy, no machines to maintain.</p>
+          <div class="hero__actions">
+            <a class="btn btn--solid" href="contact.html">Talk to us</a>
+            <a class="btn btn--ghost" href="services.html">See what we do</a>
+          </div>
+        </div>
+        <div class="hero__art">
+          <div class="art-card">
+            <!-- decorative: concierge bell -->
+            <svg viewBox="0 0 220 180" role="img" aria-hidden="true" fill="none">
+              <path d="M40 132h140" stroke="#eaf3f1" stroke-width="6" stroke-linecap="round"/>
+              <path d="M55 130c0-33 25-58 55-58s55 25 55 58" stroke="#eaf3f1" stroke-width="6"/>
+              <circle cx="110" cy="60" r="9" fill="#b07a3c"/>
+              <path d="M110 51V42" stroke="#eaf3f1" stroke-width="6" stroke-linecap="round"/>
+              <path d="M110 150v8M86 150v8M134 150v8" stroke="#7fb3ac" stroke-width="5" stroke-linecap="round"/>
+              <path d="M176 70c10 4 16 12 16 22M186 58c16 6 26 20 26 36" stroke="#7fb3ac" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. FEATURE: word-bubble hook -->
+    <section class="section" aria-labelledby="f1-h">
+      <div class="container feature__grid feature--reverse">
+        <div class="feature__media">
+          <!-- decorative: key card -->
+          <svg viewBox="0 0 200 130" role="img" aria-hidden="true" fill="none">
+            <rect x="14" y="20" width="150" height="92" rx="10" fill="#fff" stroke="currentColor" stroke-width="3"/>
+            <rect x="120" y="34" width="30" height="22" rx="4" fill="#b07a3c"/>
+            <path d="M30 80h70M30 94h40" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="150" cy="96" r="16" fill="none" stroke="currentColor" stroke-width="3"/>
+            <path d="M150 88v16M142 96h16" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <h2 id="f1-h">Make every check-in count</h2>
+          <blockquote class="note-bubble">A warm, fast check-in is the first thing guests remember.</blockquote>
+          <p>We coach front-desk and night-audit staff on the small moments that shape a stay: a calm arrival, an accurate folio, a problem solved before it ever reaches a review.</p>
+          <a class="btn btn--ghost" href="services.html">Learn more</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. FEATURE: audits -->
+    <section class="section" aria-labelledby="f2-h" style="padding-top:0;">
+      <div class="container feature__grid">
+        <div>
+          <h2 id="f2-h">Smoother check-in process,<br>cleaner audits</h2>
+          <p>Tighten the handoff between shifts and the night audit. Fewer errors at 3 a.m., faster mornings, and books that reconcile without the scramble, because the team knows the why behind every step.</p>
+          <a class="btn btn--ghost" href="services.html">Learn more</a>
+        </div>
+        <div class="feature__media">
+          <!-- decorative: night-audit ledger -->
+          <svg viewBox="0 0 190 140" role="img" aria-hidden="true" fill="none">
+            <rect x="28" y="14" width="134" height="112" rx="8" fill="#fff" stroke="currentColor" stroke-width="3"/>
+            <path d="M46 40h98M46 58h98M46 76h70M46 94h84" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+            <path d="M120 70l10 10 18-20" stroke="#b07a3c" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
   </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a class="brand" href="index.html">adarkenigma<span aria-hidden="true">.</span></a>
+          <p style="margin-top:.6rem;color:#9fb0ae;max-width:32ch;">Human-first hospitality consulting for independent and privately owned hotels.</p>
+        </div>
+        <nav aria-label="Services">
+          <h2>Services</h2>
+          <ul>
+            <li><a href="services.html">Housekeeping training</a></li>
+            <li><a href="services.html">Front desk training</a></li>
+            <li><a href="services.html">Night audit</a></li>
+            <li><a href="services.html">Back office</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Company">
+          <h2>Company</h2>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2>Reach us</h2>
+          <ul>
+            <li><a href="mailto:hello@adarkenigma.com">hello@adarkenigma.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer__bottom">© 2026 adarkenigma LLC. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

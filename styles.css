@@ -259,3 +259,5 @@ p  { margin: 0 0 1rem; max-width: 62ch; }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+.nav__cta { color: #fff; }
+.site-nav .nav__cta:hover { color: #fff; }

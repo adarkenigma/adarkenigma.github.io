@@ -79,8 +79,8 @@ p  { margin: 0 0 1rem; max-width: 62ch; }
   border: 1.5px solid transparent; cursor: pointer; line-height: 1;
   transition: background-color .18s ease, color .18s ease, border-color .18s ease, transform .18s ease;
 }
-.btn--solid { background: var(--teal); color: #fff; }
-.btn--solid:hover { background: var(--teal-deep); }
+.btn--solid { background: var(--teal-deep); color: #fff; }
+.btn--solid:hover { background: #073e3e; }
 .btn--ghost { background: transparent; color: var(--teal-deep); border-color: var(--teal); }
 .btn--ghost:hover { background: rgba(15,110,110,.08); }
 .btn--light { background: #fff; color: var(--teal-deep); }

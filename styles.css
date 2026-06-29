@@ -10,7 +10,7 @@
   --ink:        #18272a;   /* near-black text                   */
   --ink-soft:   #45575a;   /* secondary text                    */
   --teal:       #8a3a3a;   /* primary accent (oxblood)          */
-  --teal-deep:  #6e2b2b;   /* dark sections / hovers            */
+  --teal-deep:  #6e2b2b;   /* dark sections / hovers (burgundy) */
   --brass:      #b07a3c;   /* warm secondary accent, sparse     */
   --brass-text: #8a5a20;   /* darker brass for small text (AA)  */
   --line:       #d8d3c8;   /* hairlines on paper                */
@@ -80,7 +80,7 @@ p  { margin: 0 0 1rem; max-width: 62ch; }
   transition: background-color .18s ease, color .18s ease, border-color .18s ease, transform .18s ease;
 }
 .btn--solid { background: var(--teal-deep); color: #fff; }
-.btn--solid:hover { background: #073e3e; }
+.btn--solid:hover { background: #561f1f; }
 .btn--ghost { background: transparent; color: var(--teal-deep); border-color: var(--teal); }
 .btn--ghost:hover { background: rgba(15,110,110,.08); }
 .btn--light { background: #fff; color: var(--teal-deep); }
@@ -107,7 +107,21 @@ p  { margin: 0 0 1rem; max-width: 62ch; }
 .site-nav a[aria-current="page"]::after {
   content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px; background: var(--teal);
 }
-.nav__cta { padding: .55rem 1.1rem; }
+/* nav "Talk to us": accent text link, no pill, slightly larger so it stands out */
+.site-nav .nav__cta {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: .35rem 0;
+  color: var(--teal-deep);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+.site-nav .nav__cta:hover {
+  background: transparent;
+  color: var(--teal-deep);
+  text-decoration: underline;
+}
 
 .nav-toggle {
   display: none; align-items: center; justify-content: center;
@@ -259,5 +273,3 @@ p  { margin: 0 0 1rem; max-width: 62ch; }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
-.nav__cta { color: #fff; }
-.site-nav .nav__cta:hover { color: #fff; }

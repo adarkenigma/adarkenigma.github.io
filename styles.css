@@ -12,6 +12,7 @@
   --teal:       #0f6e6e;   /* primary accent                    */
   --teal-deep:  #0a4f4f;   /* dark sections / hovers            */
   --brass:      #b07a3c;   /* warm secondary accent, sparse     */
+  --brass-text: #8a5a20;   /* darker brass for small text (AA)  */
   --line:       #d8d3c8;   /* hairlines on paper                */
   --line-soft:  #e6e2d8;
   --white:      #ffffff;
@@ -88,7 +89,7 @@ p  { margin: 0 0 1rem; max-width: 62ch; }
 /* ---------- header / nav ---------- */
 .site-header {
   position: sticky; top: 0; z-index: 50;
-  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  background: rgba(246, 244, 239, 0.9);
   backdrop-filter: saturate(140%) blur(8px);
   border-bottom: 1px solid var(--line-soft);
 }
@@ -208,7 +209,7 @@ p  { margin: 0 0 1rem; max-width: 62ch; }
   border: 1.5px solid var(--line); border-radius: var(--radius-sm); padding: .7rem .85rem;
 }
 .field input:focus, .field textarea:focus { border-color: var(--teal); outline: none; box-shadow: 0 0 0 3px rgba(15,110,110,.18); }
-.req { color: var(--brass); }
+.req { color: var(--brass-text); }
 .reach { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.4rem; }
 .reach dt { font-weight: 700; margin-top: .8rem; }
 .reach dd { margin: 0; color: var(--ink-soft); }

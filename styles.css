@@ -141,6 +141,15 @@ p  { margin: 0 0 1rem; max-width: 62ch; }
 }
 .feature__media svg { width: min(260px, 80%); height: auto; color: var(--teal); }
 
+/* image placeholder frames (temporary, weeks 3–4) */
+.img-placeholder-text {
+  font-family: var(--body); font-weight: 600; color: var(--ink-soft);
+  text-align: center; margin: 0; font-size: .95rem; line-height: 1.4;
+}
+.art-card--placeholder { display: grid; place-items: center; min-height: 200px; border: 2px dashed rgba(234,243,241,.55); }
+.art-card--placeholder .img-placeholder-text { color: #eaf3f1; }
+.feature__media--placeholder { border-style: dashed; }
+
 /* the word-bubble signature element */
 .note-bubble {
   position: relative; background: var(--white); border: 1px solid var(--line);

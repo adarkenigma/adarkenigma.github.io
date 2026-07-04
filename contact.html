@@ -15,7 +15,7 @@
 
   <header class="site-header">
     <div class="container header__inner">
-      <a class="brand" href="index.html">adarkenigma<span class="brand__mark" aria-hidden="true">.</span></a>
+      <a class="brand" href="index.html"><img class="brand__logo" src="adarkenigma-logo.svg" alt="adarkenigma LLC home"></a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
         <span class="visually-hidden">Menu</span>
         <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -25,6 +25,7 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="services.html">Services</a></li>
+          <li><a href="resources.html">Resources</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html" aria-current="page">Contact</a></li>
         </ul>
@@ -45,17 +46,21 @@
                To make this live on a static host, set the form "action" to your
                Formspree endpoint (https://formspree.io) or a Google Forms POST URL.
                Until then it is a fully labelled, accessible form ready to wire. -->
-          <form action="https://formspree.io/f/your-id-here" method="POST" aria-describedby="form-note">
+          <form id="contact-form" action="https://formspree.io/f/your-id-here" method="POST" aria-describedby="form-note" novalidate>
             <p id="form-note" class="note-small" style="margin-top:0;">Fields marked <span class="req" aria-hidden="true">*</span> are required.</p>
+
+            <p id="form-success" class="form-success" role="status" hidden>Thanks — your message has been sent. We will reply within two business days.</p>
 
             <div class="field">
               <label for="name">Name <span class="req" aria-hidden="true">*</span></label>
-              <input type="text" id="name" name="name" autocomplete="name" required>
+              <input type="text" id="name" name="name" autocomplete="name" required aria-describedby="name-error">
+              <span id="name-error" class="field-error" role="alert"></span>
             </div>
 
             <div class="field">
               <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
-              <input type="email" id="email" name="email" autocomplete="email" required>
+              <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-error">
+              <span id="email-error" class="field-error" role="alert"></span>
             </div>
 
             <div class="field">
@@ -65,8 +70,9 @@
 
             <div class="field">
               <label for="message">Message <span class="req" aria-hidden="true">*</span></label>
-              <textarea id="message" name="message" rows="5" required aria-describedby="msg-hint"></textarea>
+              <textarea id="message" name="message" rows="5" required aria-describedby="msg-hint message-error"></textarea>
               <p id="msg-hint" class="hint">A sentence or two about your team and what you want to improve is plenty.</p>
+              <span id="message-error" class="field-error" role="alert"></span>
             </div>
 
             <button type="submit" class="btn btn--solid">Send message</button>
@@ -108,6 +114,7 @@
         <nav aria-label="Company">
           <h2>Company</h2>
           <ul>
+            <li><a href="resources.html">Resources</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>

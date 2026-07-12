@@ -201,8 +201,27 @@ p  { margin: 0 0 1rem; max-width: 62ch; }
 .chart__tick { font-size: .8rem; color: var(--ink-soft); }
 .note-small { font-size: .85rem; color: var(--ink-soft); margin-top: .9rem; }
 
+/* ---------- data table ---------- */
+.table-wrap {
+  overflow-x: auto; margin-top: 1rem;
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-sm);
+}
+.data-table { width: 100%; border-collapse: collapse; font-size: .98rem; }
+.data-table th, .data-table td {
+  text-align: left; vertical-align: top;
+  padding: .8rem 1rem; border-bottom: 1px solid var(--line-soft);
+}
+.data-table thead th {
+  font-family: var(--body); font-weight: 700; font-size: .78rem;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft);
+  border-bottom: 2px solid var(--line); background: var(--paper-2);
+}
+.data-table tbody th { font-weight: 600; color: var(--ink); }
+.data-table tbody tr:last-child th, .data-table tbody tr:last-child td { border-bottom: 0; }
+.table-note { display: block; font-weight: 400; font-size: .85rem; color: var(--ink-soft); }
+
 /* ---------- service bands ---------- */
-.service { border-top: 1px solid var(--line); padding-block: clamp(1.6rem, 1rem + 2vw, 2.4rem); }
+.service { scroll-margin-top: 90px; border-top: 1px solid var(--line); padding-block: clamp(1.6rem, 1rem + 2vw, 2.4rem); }
 .service__grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(1.2rem, 3vw, 2.5rem); align-items: start; }
 .service h3 { color: var(--teal-deep); }
 .service ul { margin: 0; padding-left: 1.1rem; color: var(--ink-soft); }
@@ -230,6 +249,10 @@ p  { margin: 0 0 1rem; max-width: 62ch; }
 
 /* ---------- footer ---------- */
 .site-footer { background: var(--ink); color: #cdd6d5; margin-top: clamp(3rem, 2rem + 5vw, 6rem); }
+.footer__kicker {
+  color: #9fb0ae; font-size: .72rem; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase; margin: 0 0 .35rem;
+}
 .site-footer .container { padding-block: clamp(2.2rem, 1.5rem + 3vw, 3.4rem); }
 .footer__grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 1.5rem; }
 .footer__brand .brand { color: #fff; }

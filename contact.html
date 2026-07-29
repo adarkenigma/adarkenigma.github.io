@@ -42,13 +42,13 @@
 
         <div class="contact__grid" style="margin-top:2rem;">
           <!-- FORM
-               To make this live on a static host, set the form "action" to your
-               Formspree endpoint (https://formspree.io) or a Google Forms POST URL.
-               Until then it is a fully labelled, accessible form ready to wire. -->
-          <form id="contact-form" action="https://formspree.io/f/your-id-here" method="POST" aria-describedby="form-note" novalidate>
+               script.js validates every field and shows the success message below.
+               To also deliver the message by email later, add a Formspree endpoint
+               (https://formspree.io) as the form's "action" attribute. -->
+          <form id="contact-form" aria-describedby="form-note" novalidate>
             <p id="form-note" class="note-small" style="margin-top:0;">Fields marked <span class="req" aria-hidden="true">*</span> are required.</p>
 
-            <p id="form-success" class="form-success" role="status" hidden>Thanks — your message has been sent. We will reply within two business days.</p>
+            <p id="form-success" class="form-success" role="status" tabindex="-1" hidden>Thanks — your message has been sent. We will reply within two business days.</p>
 
             <div class="field">
               <label for="name">Name <span class="req" aria-hidden="true">*</span></label>

@@ -1,4 +1,4 @@
-// adarkenigma LLC — minimal accessible mobile navigation
+// adarkenigma LLC - minimal accessible mobile navigation
 (function () {
   var toggle = document.querySelector('.nav-toggle');
   var nav = document.getElementById('site-nav');
@@ -34,7 +34,7 @@
 
 
 /* ============================================================
-   adarkenigma LLC — contact form validation
+   adarkenigma LLC - contact form validation
    Checks each field before the form is sent, shows an error
    under any field that needs fixing, and shows a success
    message when everything passes.
@@ -50,6 +50,7 @@
   var fields = [
     { id: 'name',    errorId: 'name-error',    required: true,  label: 'name' },
     { id: 'email',   errorId: 'email-error',   required: true,  label: 'email address' },
+    { id: 'topic',   errorId: 'topic-error',   required: true,  label: 'topic' },
     { id: 'message', errorId: 'message-error', required: true,  label: 'message' }
   ];
 
@@ -59,14 +60,16 @@
     var value = input.value.trim(); // String object method
 
     if (field.required && value.length === 0) {
+      if (field.id === 'topic') {
+        return 'Choose what you would like help with.';
+      }
       return 'Enter your ' + field.label + '.';
     }
 
     if (field.id === 'email' && value.length > 0) {
-      // A simple check: one @ with text on both sides and a dot after it.
-      var at = value.indexOf('@');
-      var dot = value.lastIndexOf('.');
-      if (at < 1 || dot < at + 2 || dot === value.length - 1) {
+      // Basic email-format check for the classroom demonstration form.
+      var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+      if (!emailPattern.test(value)) {
         return 'Enter a valid email address, like name@hotel.com.';
       }
     }
@@ -97,7 +100,8 @@
     (function (field) {
       var input = document.getElementById(field.id);
       if (!input) return;
-      input.addEventListener('blur', function () {
+      var evt = (input.tagName === 'SELECT') ? 'change' : 'blur';
+      input.addEventListener(evt, function () {
         showError(field, checkField(field));
       });
     })(fields[i]);
@@ -124,7 +128,7 @@
         return;
       }
 
-      // Everything passed.
+      // Everything passed validation. No information is submitted or stored.
       successBox.hidden = false;
       successBox.focus();
       form.reset();
@@ -132,7 +136,7 @@
       // If anything unexpected breaks, say so instead of failing silently.
       successBox.hidden = true;
       console.error('Contact form error:', err);
-      alert('Sorry — something went wrong sending that. Please email hello@adarkenigma.com instead.');
+      alert('Sorry, something went wrong sending that. Please email hello@adarkenigma.com instead.');
     }
   });
 })();

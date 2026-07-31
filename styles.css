@@ -1,6 +1,6 @@
 /* ============================================================
-   adarkenigma LLC — site styles
-   Palette: warm paper + pine teal + muted brass (hospitality, calm)
+   adarkenigma LLC - site styles
+   Palette: warm paper + oxblood + muted brass
    Type: Fraunces (display) + Figtree (body)
    ============================================================ */
 
@@ -58,6 +58,11 @@ p  { margin: 0 0 1rem; max-width: 62ch; }
   margin: 0 0 .9rem;
 }
 .section { padding-block: clamp(3rem, 2rem + 5vw, 6rem); }
+.section--compact-top { padding-top: 0; }
+.container--narrow { max-width: 780px; }
+.heading-space-md { margin-top: 2rem; }
+.heading-space-lg { margin-top: 2.5rem; }
+.action-row { margin-top: 1.5rem; }
 .lead { font-size: 1.12rem; color: var(--ink-soft); }
 
 /* ---------- skip link ---------- */
@@ -130,6 +135,10 @@ p  { margin: 0 0 1rem; max-width: 62ch; }
   color: #eaf3f1;
 }
 .art-card svg { width: 100%; height: auto; }
+.art-card--image {
+  background: var(--paper-2); border: 1px solid var(--line);
+  display: grid; place-items: center;
+}
 .art-card--image img { width: 100%; height: auto; }
 
 /* ---------- alternating feature blocks ---------- */
@@ -141,15 +150,6 @@ p  { margin: 0 0 1rem; max-width: 62ch; }
   display: grid; place-items: center; min-height: 220px;
 }
 .feature__media svg { width: min(260px, 80%); height: auto; color: var(--teal); }
-
-/* image placeholder frames (temporary, weeks 3–4) */
-.img-placeholder-text {
-  font-family: var(--body); font-weight: 600; color: var(--ink-soft);
-  text-align: center; margin: 0; font-size: .95rem; line-height: 1.4;
-}
-.art-card--placeholder { display: grid; place-items: center; min-height: 200px; border: 2px dashed rgba(234,243,241,.55); }
-.art-card--placeholder .img-placeholder-text { color: #eaf3f1; }
-.feature__media--placeholder { border-style: dashed; }
 
 /* the word-bubble signature element */
 .note-bubble {
@@ -166,26 +166,8 @@ p  { margin: 0 0 1rem; max-width: 62ch; }
   transform: rotate(45deg);
 }
 
-/* ---------- stats ---------- */
-.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1.5rem; }
-.stat {
-  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-sm);
-  padding: 1.25rem 1.1rem;
-}
-.stat__num { font-family: var(--display); font-weight: 900; font-size: 2.1rem; color: var(--teal-deep); line-height: 1; }
-.stat__label { display: block; margin-top: .5rem; color: var(--ink-soft); font-size: .95rem; }
-
-/* ---------- chart ---------- */
-.chart-panel {
-  background: var(--paper-2); border: 1px solid var(--line); border-radius: var(--radius);
-  padding: clamp(1.2rem, 3vw, 2rem); margin-top: 1.5rem;
-}
-.chart { display: flex; align-items: flex-end; gap: clamp(.6rem, 2vw, 1.4rem); height: 200px; margin-top: 1rem; }
-.chart__col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: .5rem; height: 100%; justify-content: flex-end; }
-.chart__bar { width: 100%; max-width: 56px; background: var(--teal); border-radius: 6px 6px 0 0; }
-.chart__bar--accent { background: var(--brass); }
-.chart__tick { font-size: .8rem; color: var(--ink-soft); }
 .note-small { font-size: .85rem; color: var(--ink-soft); margin-top: .9rem; }
+.note-small--flush { margin-top: 0; }
 
 /* ---------- data table ---------- */
 .table-wrap {
@@ -211,6 +193,47 @@ p  { margin: 0 0 1rem; max-width: 62ch; }
 .link-list li { margin-bottom: .55rem; }
 .link-list a { font-weight: 600; }
 
+
+/* ---------- focus cards (replaces the old invented percentages) ---------- */
+.focus-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1.5rem; }
+.focus {
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-sm);
+  padding: 1.25rem 1.1rem;
+}
+.focus__title { font-family: var(--display); font-size: 1.1rem; color: var(--teal-deep); margin: 0 0 .45rem; line-height: 1.2; }
+.focus__text { color: var(--ink-soft); font-size: .95rem; margin: 0; }
+
+/* ---------- numbered process steps ---------- */
+.steps { margin: 1.2rem 0 0; padding-left: 1.3rem; }
+.steps li { margin-bottom: 1rem; padding-left: .25rem; }
+.steps li::marker { color: var(--teal); font-weight: 700; }
+.steps strong { color: var(--ink); }
+
+/* ---------- glossary ---------- */
+.glossary {
+  margin: 1.4rem 0 0; padding: 0;
+  display: grid; grid-template-columns: minmax(190px, 16rem) 1fr; gap: 0;
+  border-top: 1px solid var(--line);
+}
+.glossary dt {
+  font-weight: 700; color: var(--teal-deep);
+  padding: .85rem 1rem .85rem 0; border-bottom: 1px solid var(--line-soft);
+}
+.glossary dd {
+  margin: 0; color: var(--ink-soft);
+  padding: .85rem 0; border-bottom: 1px solid var(--line-soft);
+}
+
+/* ---------- text + illustration split ---------- */
+.illus-split { display: grid; grid-template-columns: 1.35fr .65fr; gap: clamp(1.5rem, 4vw, 3rem); align-items: center; }
+.illus {
+  background: var(--paper-2); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: clamp(1.2rem, 3vw, 2rem);
+  display: grid; place-items: center;
+}
+.illus img { width: 100%; height: auto; }
+.reach__art { width: 100%; height: auto; margin-top: 1.4rem; }
+
 /* ---------- service bands ---------- */
 .service { scroll-margin-top: 90px; border-top: 1px solid var(--line); padding-block: clamp(1.6rem, 1rem + 2vw, 2.4rem); }
 .service__grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(1.2rem, 3vw, 2.5rem); align-items: start; }
@@ -225,18 +248,22 @@ p  { margin: 0 0 1rem; max-width: 62ch; }
 
 /* ---------- contact ---------- */
 .contact__grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(1.5rem, 4vw, 3rem); align-items: start; }
+.contact__grid--spaced { margin-top: 2rem; }
 .field { margin-bottom: 1.1rem; }
 .field label { display: block; font-weight: 600; margin-bottom: .35rem; }
 .field .hint { font-size: .85rem; color: var(--ink-soft); margin: .3rem 0 0; }
-.field input, .field textarea {
+.field input, .field textarea, .field select {
   width: 100%; font: inherit; color: var(--ink); background: var(--white);
   border: 1.5px solid var(--line); border-radius: var(--radius-sm); padding: .7rem .85rem;
 }
-.field input:focus, .field textarea:focus { border-color: var(--teal); outline: none; box-shadow: 0 0 0 3px rgba(15,110,110,.18); }
+.field select { appearance: none; background-image: none; cursor: pointer; }
+.field input:focus, .field textarea:focus, .field select:focus {
+  border-color: var(--teal); outline: none; box-shadow: 0 0 0 3px rgba(110,43,43,.18);
+}
 .req { color: var(--brass-text); }
 
 /* form validation feedback */
-.field input.is-invalid, .field textarea.is-invalid { border-color: #a12c2c; }
+.field input.is-invalid, .field textarea.is-invalid, .field select.is-invalid { border-color: #a12c2c; }
 .field-error {
   display: block; margin-top: .35rem;
   font-size: .88rem; font-weight: 600; color: #8c2020;
@@ -266,6 +293,8 @@ p  { margin: 0 0 1rem; max-width: 62ch; }
 .site-footer .container { padding-block: clamp(2.2rem, 1.5rem + 3vw, 3.4rem); }
 .footer__grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 1.5rem; }
 .footer__brand .brand { color: #fff; }
+.footer__summary { margin-top: .6rem; color: #9fb0ae; max-width: 32ch; }
+.footer__location { margin-top: .4rem; color: #9fb0ae; }
 .site-footer h2 { color: #fff; font-family: var(--body); font-size: .82rem; letter-spacing: .12em; text-transform: uppercase; margin-bottom: .8rem; }
 .site-footer ul { list-style: none; margin: 0; padding: 0; }
 .site-footer li { margin-bottom: .45rem; }
@@ -274,7 +303,7 @@ p  { margin: 0 0 1rem; max-width: 62ch; }
 .footer__bottom { border-top: 1px solid rgba(255,255,255,.12); margin-top: 2rem; padding-top: 1.2rem; font-size: .85rem; color: #9fb0ae; }
 
 /* ============================================================
-   Responsive — mobile first collapse
+   Responsive - mobile first collapse
    ============================================================ */
 @media (max-width: 860px) {
   .nav-toggle { display: inline-flex; }
@@ -290,14 +319,18 @@ p  { margin: 0 0 1rem; max-width: 62ch; }
   .site-nav a { display: block; padding: .85rem .25rem; }
   .site-nav a[aria-current="page"]::after { display: none; }
 
-  .hero__grid, .feature__grid, .service__grid, .contact__grid, .footer__grid { grid-template-columns: 1fr; }
+  .hero__grid, .feature__grid, .service__grid, .contact__grid, .footer__grid,
+  .illus-split { grid-template-columns: 1fr; }
+  .glossary { grid-template-columns: 1fr; }
+  .glossary dt { padding-bottom: .2rem; border-bottom: 0; }
+  .glossary dd { padding-top: 0; }
+  .focus-grid { grid-template-columns: repeat(2, 1fr); }
   .feature--reverse .feature__media { order: 0; }
   .hero__art { order: -1; }
-  .stats { grid-template-columns: repeat(2, 1fr); }
   .footer__grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 480px) {
-  .stats { grid-template-columns: 1fr; }
+  .focus-grid { grid-template-columns: 1fr; }
   .footer__grid { grid-template-columns: 1fr; }
 }
 
